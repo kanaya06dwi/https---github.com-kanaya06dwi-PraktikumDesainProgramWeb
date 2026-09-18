@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIMPUS-Mini | Daftar Buku</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>SIMPUS-Mini</h1>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">&#9776;</label>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Beranda</a></li>
+                <li><a href="list.html">Daftar Buku</a></li>
+                <li><a href="tambah.html">Tambah Buku</a></li>
+                <li><a href="../anggota/list.html">Daftar Anggota</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Daftar Buku</h2>
+            <div class="table-responsive">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Judul</th>
+                        <th>Pengarang</th>
+                        <th>Tahun</th>
+                        <th>Stok</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Laskar Pelangi</td>
+                        <td>Andrea Hirata</td>
+                        <td>2005</td>
+                        <td>4</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button" class="btn-detail">Detail</button>
+                            <button type="button">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bumi Manusia</td>
+                        <td>Pramoedya Ananta Toer</td>
+                        <td>1980</td>
+                        <td>2</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button" class="btn-detail">Detail</button>
+                            <button type="button">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Negeri 5 Menara</td>
+                        <td>Ahmad Fuadi</td>
+                        <td>2009</td>
+                        <td>0</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button" class="btn-detail">Detail</button>
+                            <button type="button">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Filosofi Teras</td>
+                        <td>Henry Manampiring</td>
+                        <td>2018</td>
+                        <td>5</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button" class="btn-detail">Detail</button>
+                            <button type="button">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ronggeng Dukuh Paruk</td>
+                        <td>Ahmad Tohari</td>
+                        <td>1982</td>
+                        <td>1</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button" class="btn-detail">Detail</button>
+                            <button type="button">Hapus</button>
+                        </td>
+                        </tr>
+                </tbody>
+            </table>
+            </div>
+            <br>
+            <h3>Contoh Query Database:</h3>
+            <pre class="code-responsive" style="background-color: #2b2b2b; color: #50fa7b; padding: 1rem; border-radius: 6px;">SELECT id_buku, judul_buku, pengarang, penerbit, tahun_terbit, jumlah_stok, kategori FROM tabel_katalog_buku_simpus_mini WHERE status_ketersediaan = 'tersedia' ORDER BY tahun_terbit DESC, judul_buku ASC;</pre>
+        </section>
+        </main>
+        <footer>
+            <p>&copy; 2026 SIMPUS-Mini &mdash; Jobsheet 1</p>
+        </footer>
+</body>
+</html>
