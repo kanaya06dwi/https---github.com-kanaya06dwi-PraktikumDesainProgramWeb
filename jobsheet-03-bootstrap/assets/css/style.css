@@ -1,0 +1,23 @@
+header nav.nav-open {
+    display: block !important;
+}
+
+.nav-toggle-label {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.error {
+    display: block;
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
+.search-box {
+    margin-bottom: 1.25rem;
+}
+
+.search-box input {
+    max-width: 350px;
+}
