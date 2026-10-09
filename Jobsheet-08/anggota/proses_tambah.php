@@ -23,14 +23,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (!empty($id)) {
         $query = "UPDATE anggota SET nama=$1, email=$2, no_anggota=$3, tanggal_lahir=$4, alamat=$5, no_hp=$6 WHERE id=$7";
-        $result = pg_query_params($conn, $query, array($nama, $email, $no_anggota, $tgl, $alamat, $no_hp, $id));
+        $result = @pg_query_params($conn, $query, array($nama, $email, $no_anggota, $tgl, $alamat, $no_hp, $id));
     } else {
         $query = "INSERT INTO anggota (nama, email, no_anggota, tanggal_lahir, alamat, no_hp) VALUES ($1, $2, $3, $4, $5, $6)";
-        $result = pg_query_params($conn, $query, array($nama, $email, $no_anggota, $tgl, $alamat, $no_hp));
+        $result = @pg_query_params($conn, $query, array($nama, $email, $no_anggota, $tgl, $alamat, $no_hp));
     }
 
     if (!$result) {
-        die("Gagal simpan anggota: " . pg_last_error($conn));
+        $errMessage = pg_last_error($conn);
+        if (strpos($errMessage, 'anggota_no_anggota_key') !== false) {
+            $errors['no_anggota'] = "No. Anggota '$no_anggota' sudah terdaftar! Gunakan nomor lain.";
+            $redirect = !empty($id) ? "tambah.php?id=$id&err=" : "tambah.php?err=";
+            header("Location: " . $redirect . urlencode(json_encode($errors)));
+            exit;
+        } else {
+            die("Gagal simpan anggota: " . $errMessage);
+        }
     }
 
     pg_close($conn);
