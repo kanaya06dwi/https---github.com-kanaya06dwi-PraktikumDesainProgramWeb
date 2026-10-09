@@ -58,6 +58,7 @@ if ($result) {
                         <th>Stok</th>
                         <th>Kategori</th>
                         <th>Aksi</th>
+                        <th>Tanggal Ditambahkan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,6 +74,9 @@ if ($result) {
                                 <td>
                                     <a href="tambah.php?id=<?= $buku['id'] ?>" class="btn btn-warning btn-sm text-white">Edit</a>
                                     <a href="list.php?aksi=hapus&id=<?= $buku['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus buku ini?')">Hapus</a>
+                                </td>
+                                <td>
+                                    <?= !empty($buku['tanggal_ditambahkan']) ? date('d-m-Y H:i', strtotime($buku['tanggal_ditambahkan'])) : '_' ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
