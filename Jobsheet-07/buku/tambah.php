@@ -34,6 +34,17 @@ unset($_SESSION['flash']);
             <label for="stok" class="form-label fw-semibold">Stok</label>
             <input type="number" class="form-control" id="stok" name="stok" min="0">
         </div>
+
+        <div class="mb-3">
+                                <label for="kategori" class="form-label fw-semibold">Kategori</label>
+                                <select class="form-select" id="kategori" name="kategori">
+                                    <option value="Fiksi">Fiksi</option>
+                                    <option value="Non-Fiksi">Non-Fiksi</option>
+                                    <option value="Teknologi">Teknologi</option>
+                                    <option value="Sains">Sains</option>
+                                </select>
+                            </div>
+                            <div class="mt-4">
         <button type="submit" class="btn btn-primary">Simpan Buku</button>
         <a href="list.php" class="btn btn-outline-secondary">Batal</a>
     </form>
