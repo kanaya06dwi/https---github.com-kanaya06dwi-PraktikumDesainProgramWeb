@@ -20,7 +20,7 @@ if (!$buku) {
 <div class="container">
     <div class="card card-custom p-4">
         <h3 class="text-teal fw-bold mb-4">Edit Buku</h3>
-        <form action="proses_edit.php" method="POST">
+        <form action="proses_edit.php" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menyimpan perubahan data ini?');">
             <input type="hidden" name="id" value="<?= $buku['id'] ?>">
 
             <div class="mb-3 col-md-6">
