@@ -2,7 +2,7 @@
 include '../includes/header.php'; 
 require_once __DIR__ . '/../includes/koneksi.php';
 
-$perPage = 5;
+$perPage = 10;
 $page    = max(1, (int)($_GET['page'] ?? 1));
 $offset  = ($page - 1) * $perPage;
 $keyword = trim($_GET['q'] ?? '');
