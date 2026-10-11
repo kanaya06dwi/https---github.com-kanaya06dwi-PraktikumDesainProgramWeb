@@ -3,6 +3,10 @@ session_start();
 require_once __DIR__ . '/../includes/koneksi.php';
 require_once __DIR__ . '/../includes/auth.php';
 
+if ($_SESSION['role'] !== 'admin') {
+    echo "<script>alert('Akses ditolak! Hanya Admin yang boleh menghapus anggota.'); window.location.href='list.php';</script>";
+    exit;
+}
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: list.php');
     exit;

@@ -1,4 +1,3 @@
-    $query = "SELECT * FROM anggota WHERE nama ILIKE $1 OR no_anggota ILIKE $1 OR alamat ILIKE $1 ORDER BY id DESC";
 <?php 
 include '../includes/header.php'; 
 require_once __DIR__ . '/../includes/koneksi.php';
