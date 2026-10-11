@@ -15,7 +15,7 @@ if ($conn) {
         $resCount = pg_query_params($conn, "SELECT COUNT(*) FROM buku WHERE judul ILIKE $1 OR penulis ILIKE $1 OR kategori ILIKE $1", array("%$keyword%"));
         if ($resCount) $totalRows = (int)pg_fetch_result($resCount, 0, 0);
 
-        $query = "SELECT * FROM buku WHERE judul ILIKE $1 OR penulis ILIKE $1 OR kategori ILIKE $1 ORDER BY id DESC LIMIT $2 OFFSET $3";
+       $query = "SELECT * FROM buku WHERE judul ILIKE $1 OR penulis ILIKE $1 OR kategori ILIKE $1 ORDER BY id DESC LIMIT $2 OFFSET $3";
         $result = pg_query_params($conn, $query, array("%$keyword%", $perPage, $offset));
     } else {
         $resCount = pg_query($conn, "SELECT COUNT(*) FROM buku");
